@@ -5,19 +5,13 @@ a simple tool for fetching texts and consuming them.
 The original purpose is to simplify the process of importing texts and their localizations into Flutter apps from translation repository solutions such as Applanga.
 
 ## Installation
-For now use the unpublished package [approach](https://flutter.dev/docs/development/packages-and-plugins/using-packages#dependencies-on-unpublished-packages) as described below.
 
 ```yaml
 dev_dependencies:
-  
-  ztexts:
-    git:
-      url: https://github.com/zaraz-digital/ztexts.git
+  ztexts: ^0.1.1
 ```
-
-Later the package will be published to [pub.dev](https://pub.dev/).
-
 NOTE: in order to use for applying the texts in the Flutter app, add this to your pubspec.yaml as well:
+
 ```yaml
 dependencies:
   flutter_localizations:
@@ -98,7 +92,6 @@ class MyApp extends StatelessWidget {
 Shortlist of next planned activities:
 * Adding tests
 * Updating README.md with architecture, enriched info on usage and options
-* Updating CHANGELOG.md preparing for first [pub.dev](https://pub.dev/) publish 
 * Looking into CI
 * Looking into other potential use-cases where this library could help
 

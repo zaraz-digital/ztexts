@@ -1,4 +1,4 @@
-# 0.1.0
+# 0.1.1
 Initial development release.
 * Supported text fetchers:
     * ApplangaFetcher - fetches texts from you Applanga project
