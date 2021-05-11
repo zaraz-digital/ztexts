@@ -3,17 +3,30 @@ import 'dart:io';
 
 import 'package:ztexts/texts.dart';
 import 'package:ztexts/texts_consumer.dart';
+import 'package:ztexts/texts_utils.dart';
+
+import 'gen_lang/core_18n.dart';
 
 const keyPath = 'outputPath';
 
 class AppTextsConsumer extends TextsConsumer {
-  String _textsPath;
-  JsonEncoder _encoder;
+  late String _textsPath;
+  late JsonEncoder _encoder;
+
   String _message = 'Not executed';
 
   AppTextsConsumer(Map<String, String> configuration) : super(configuration) {
-    _textsPath = configuration[keyPath];
+    requireNotNull(configuration, [keyPath]);
+    _textsPath = configuration[keyPath]!;
     _encoder = JsonEncoder.withIndent('    ');
+  }
+
+  factory AppTextsConsumer.fromConfiguration(
+      Map<String, String>? configuration) {
+    if (configuration == null) {
+      throw 'App texts consumer requires a valid configuration to be set!';
+    }
+    return AppTextsConsumer(configuration);
   }
 
   @override
@@ -29,9 +42,7 @@ class AppTextsConsumer extends TextsConsumer {
     }
 
     try {
-      var processResult = Process.runSync(
-          'dart', ['run', 'gen_lang:generate', '--source-dir=$_textsPath']);
-      _message = processResult.stdout.toString();
+      handleGenerateI18nFiles(I18nOption(_textsPath, 'en', 'lib/generated'));
     } catch (exception) {
       _message = exception.toString();
     }

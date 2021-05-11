@@ -13,6 +13,4 @@ abstract class TextsConsumer {
   String toString() {
     return 'TextsConsumer{_configuration: $_configuration}';
   }
-
-
 }

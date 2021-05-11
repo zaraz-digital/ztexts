@@ -6,13 +6,10 @@ import 'package:ztexts/texts_factory.dart';
 //0 Success
 //1 Warnings
 //2 Errors
-Future<void> execute(String configPath, String sourceKey, String destinationKey) async {
+Future<void> execute(
+    String configPath, String sourceKey, String destinationKey) async {
   try {
-    //Validate input
-    if(sourceKey == null || destinationKey == null) {
-      throw 'Source and destination should not be null!';
-    }
-    if(!File(configPath).existsSync()) {
+    if (!File(configPath).existsSync()) {
       throw 'Configuration file does not exist!';
     }
 
@@ -31,11 +28,9 @@ Future<void> execute(String configPath, String sourceKey, String destinationKey)
     await consumer.consume(texts);
 
     _succeed(consumer.getMessage());
-
   } catch (exception) {
-    _fail(exception);
+    _fail(exception.toString());
   }
-
 }
 
 void _fail(String msg) {

@@ -12,7 +12,6 @@ const destinationApp = 'apptexts';
 const keyPath = 'path';
 
 class TextsFactory {
-
   final TextsConfig textsConfig;
 
   TextsFactory(this.textsConfig);
@@ -22,7 +21,7 @@ class TextsFactory {
 
     switch (sourceKey) {
       case sourceApplanga:
-        return ApplangaFetcher(configuration);
+        return ApplangaFetcher.fromConfiguration(configuration);
       default:
         throw 'Source $sourceKey is unknown!';
     }
@@ -35,7 +34,7 @@ class TextsFactory {
       case destinationLog:
         return LogConsumer();
       case destinationApp:
-        return AppTextsConsumer(configuration);
+        return AppTextsConsumer.fromConfiguration(configuration);
       default:
         throw 'Destination $destinationKey is unknown!';
     }

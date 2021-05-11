@@ -5,3 +5,6 @@ Initial development release.
 * Supported text consumers:
     * LogConsumer - prints texts output to console
     * AppTextsConsumer - converts the fetched texts to i18n Flutter app texts
+
+# 0.2.0
+Add support for sound nullability

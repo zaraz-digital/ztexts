@@ -13,5 +13,4 @@ class LogConsumer implements TextsConsumer {
   String getMessage() {
     return 'Texts successfully printed to console';
   }
-
 }

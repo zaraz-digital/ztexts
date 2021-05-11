@@ -1,3 +1,4 @@
+[![Pub Package](https://img.shields.io/pub/v/ztexts?color=blue)](https://pub.dev/packages/ztexts)
 # ztexts
 
 a simple tool for fetching texts and consuming them. 
@@ -8,7 +9,7 @@ The original purpose is to simplify the process of importing texts and their loc
 
 ```yaml
 dev_dependencies:
-  ztexts: ^0.1.1
+  ztexts: 0.2.0
 ```
 NOTE: in order to use for applying the texts in the Flutter app, add this to your pubspec.yaml as well:
 
