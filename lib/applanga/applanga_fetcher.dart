@@ -3,7 +3,7 @@ import 'dart:io';
 
 import 'package:ztexts/texts.dart';
 import 'package:ztexts/texts_fetcher.dart';
-import 'package:http/http.dart' as http;
+import 'package:http/http.dart';
 
 import 'package:ztexts/texts_utils.dart';
 
@@ -11,10 +11,12 @@ const keyAppId = 'appId';
 const keyApiToken = 'apiToken';
 
 class ApplangaFetcher extends TextsFetcher {
+  final Client httpClient;
   late String _appId;
   late String _apiToken;
 
-  ApplangaFetcher(Map<String, String> configuration) : super(configuration) {
+  ApplangaFetcher(Map<String, String> configuration, this.httpClient)
+      : super(configuration) {
     requireNotNull(configuration, [keyAppId, keyApiToken]);
 
     _appId = configuration[keyAppId]!;
@@ -26,12 +28,12 @@ class ApplangaFetcher extends TextsFetcher {
     if (configuration == null) {
       throw 'Applanga fetcher requires a valid configuration to be set!';
     }
-    return ApplangaFetcher(configuration);
+    return ApplangaFetcher(configuration, Client());
   }
 
   @override
   Future<Texts> fetch() async {
-    var applangaResponse = await http.get(
+    var applangaResponse = await httpClient.get(
       Uri.parse('https://api.applanga.com/v1/api?app=$_appId'),
       headers: {HttpHeaders.authorizationHeader: 'Bearer $_apiToken'},
     );

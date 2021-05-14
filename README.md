@@ -94,7 +94,6 @@ class MyApp extends StatelessWidget {
 Shortlist of next planned activities:
 * Adding tests
 * Updating README.md with architecture, enriched info on usage and options
-* Looking into CI
 * Looking into other potential use-cases where this library could help
 
 ## Contributing
