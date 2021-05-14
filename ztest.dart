@@ -1,3 +1,3 @@
 void asdf() {
-  print("Invoked asdf");
+  print('Invoked asdf');
 }
