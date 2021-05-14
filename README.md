@@ -1,4 +1,5 @@
 [![Pub Package](https://img.shields.io/pub/v/ztexts?color=blue)](https://pub.dev/packages/ztexts)
+[![Build Status](https://github.com/zaraz-digital/ztexts/actions/workflows/dart_ci.yaml/badge.svg)](https://github.com/zaraz-digital/ztexts/actions)
 # ztexts
 
 a simple tool for fetching texts and consuming them. 
