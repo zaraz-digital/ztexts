@@ -8,3 +8,6 @@ Initial development release.
 
 # 0.2.0
 Add support for sound nullability
+
+# 0.2.1
+Fix i18 file generation

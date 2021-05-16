@@ -1,5 +1,5 @@
 name: ztexts
-version: 0.2.0
+version: 0.2.1
 description: >-
   A Dart cli tool for fetching and consuming texts.
   Purpose: get texts from a source and send them to a destination.

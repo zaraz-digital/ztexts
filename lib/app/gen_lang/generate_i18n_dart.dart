@@ -16,7 +16,7 @@ class S {
   static const GeneratedLocalizationsDelegate delegate = GeneratedLocalizationsDelegate();
 
   static S of(BuildContext context) {
-    return Localizations.of<S>(context, S);
+    return Localizations.of<S>(context, S)!;
   }
   
   static Future<S> load(Locale locale) {
@@ -42,8 +42,8 @@ $supportedLocale
     ];
   }
 
-  LocaleListResolutionCallback listResolution({Locale fallback}) {
-    return (List<Locale> locales, Iterable<Locale> supported) {
+  LocaleListResolutionCallback listResolution({Locale? fallback}) {
+    return (List<Locale>? locales, Iterable<Locale> supported) {
       if (locales == null || locales.isEmpty) {
         return fallback ?? supported.first;
       } else {
@@ -52,13 +52,13 @@ $supportedLocale
     };
   }
 
-  LocaleResolutionCallback resolution({Locale fallback}) {
-    return (Locale locale, Iterable<Locale> supported) {
+  LocaleResolutionCallback resolution({Locale? fallback}) {
+    return (Locale? locale, Iterable<Locale> supported) {
       return _resolve(locale, fallback, supported);
     };
   }
 
-  Locale _resolve(Locale locale, Locale fallback, Iterable<Locale> supported) {
+  Locale _resolve(Locale? locale, Locale? fallback, Iterable<Locale> supported) {
     if (locale == null || !isSupported(locale)) {
       return fallback ?? supported.first;
     }
@@ -80,7 +80,7 @@ $supportedLocale
   }
 
   @override
-  bool isSupported(Locale locale) =>
+  bool isSupported(Locale? locale) =>
     locale != null && supportedLocales.contains(locale);
 
   @override
