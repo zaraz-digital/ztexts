@@ -13,7 +13,7 @@ class AppTextsConsumer extends TextsConsumer {
   late String _textsPath;
   late JsonEncoder _encoder;
 
-  String _message = 'Not executed';
+  String _message = 'Texts successfully applied!';
 
   AppTextsConsumer(Map<String, String> configuration) : super(configuration) {
     requireNotNull(configuration, [keyPath]);
